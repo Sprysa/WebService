@@ -1,0 +1,8 @@
+com\epam\lab\web\rest\MailServiceImpl.class
+com\epam\lab\web\soap\MailServiceImpl.class
+com\epam\lab\web\soap\MailService.class
+com\epam\lab\dao\MailDAO.class
+com\epam\lab\bo\MailBO.class
+com\epam\lab\model\Mail.class
+com\epam\lab\web\rest\MailService.class
+com\epam\lab\utills\CSVMailManager.class

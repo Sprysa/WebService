@@ -1,0 +1,176 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soap.lab.epam.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="MailSoapServiceClient" targetNamespace="http://soap.lab.epam.com/">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soap.lab.epam.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://soap.lab.epam.com/">
+            <xs:element name="sendMail" type="tns:sendMail"/>
+            <xs:element name="sendMailResponse" type="tns:sendMailResponse"/>
+            <xs:element name="getAllMails" type="tns:getAllMails"/>
+            <xs:element name="getAllMailsResponse" type="tns:getAllMailsResponse"/>
+            <xs:element name="deleteMail" type="tns:deleteMail"/>
+            <xs:element name="deleteMailResponse" type="tns:deleteMailResponse"/>
+            <xs:element name="getMailsByEmail" type="tns:getMailsByEmail"/>
+            <xs:element name="getMailsByEmailResponse" type="tns:getMailsByEmailResponse"/>
+            <xs:element name="getMailsBySubject" type="tns:getMailsBySubject"/>
+            <xs:element name="getMailsBySubjectResponse" type="tns:getMailsBySubjectResponse"/>
+            <xs:complexType name="sendMail">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="arg0" type="tns:mail"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mail">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="email" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subj" type="xs:string"/>
+                    <xs:element minOccurs="0" name="body" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="sendMailResponse">
+                <xs:sequence>
+                    <xs:element name="return" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getAllMails">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="getAllMailsResponse">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:mail"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deleteMail">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="arg0" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deleteMailResponse">
+                <xs:sequence>
+                    <xs:element name="return" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getMailsByEmail">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getMailsByEmailResponse">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:mail"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getMailsBySubject">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getMailsBySubjectResponse">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:mail"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="sendMail">
+        <wsdl:part element="tns:sendMail" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sendMailResponse">
+        <wsdl:part element="tns:sendMailResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getAllMails">
+        <wsdl:part element="tns:getAllMails" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getAllMailsResponse">
+        <wsdl:part element="tns:getAllMailsResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteMail">
+        <wsdl:part element="tns:deleteMail" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteMailResponse">
+        <wsdl:part element="tns:deleteMailResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getMailsByEmail">
+        <wsdl:part element="tns:getMailsByEmail" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getMailsByEmailResponse">
+        <wsdl:part element="tns:getMailsByEmailResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getMailsBySubject">
+        <wsdl:part element="tns:getMailsBySubject" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getMailsBySubjectResponse">
+        <wsdl:part element="tns:getMailsBySubjectResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="MailService">
+        <wsdl:operation name="sendMail">
+            <wsdl:input message="tns:sendMail" name="sendMail"></wsdl:input>
+            <wsdl:output message="tns:sendMailResponse" name="sendMailResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllMails">
+            <wsdl:input message="tns:getAllMails" name="getAllMails"></wsdl:input>
+            <wsdl:output message="tns:getAllMailsResponse" name="getAllMailsResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteMail">
+            <wsdl:input message="tns:deleteMail" name="deleteMail"></wsdl:input>
+            <wsdl:output message="tns:deleteMailResponse" name="deleteMailResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getMailsByEmail">
+            <wsdl:input message="tns:getMailsByEmail" name="getMailsByEmail"></wsdl:input>
+            <wsdl:output message="tns:getMailsByEmailResponse" name="getMailsByEmailResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getMailsBySubject">
+            <wsdl:input message="tns:getMailsBySubject" name="getMailsBySubject"></wsdl:input>
+            <wsdl:output message="tns:getMailsBySubjectResponse" name="getMailsBySubjectResponse"></wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="MailSoapServiceClientSoapBinding" type="tns:MailService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="sendMail">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="sendMail">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="sendMailResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllMails">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getAllMails">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getAllMailsResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteMail">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="deleteMail">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deleteMailResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getMailsByEmail">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getMailsByEmail">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getMailsByEmailResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getMailsBySubject">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getMailsBySubject">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getMailsBySubjectResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="MailSoapServiceClient">
+        <wsdl:port binding="tns:MailSoapServiceClientSoapBinding" name="MailServiceImplPort">
+            <soap:address location="http://localhost:8080/BogdanSprysaMailService/mailSOAP"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

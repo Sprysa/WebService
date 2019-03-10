@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Suite">
+
+    <test name="Test">
+        <classes>
+            <class name="com.epam.lab.SendMailTest"/>
+            <class name="com.epam.lab.GetAllMailsTest"/>
+            <class name="com.epam.lab.DeleteMailTest"/>
+            <class name="com.epam.lab.GetMailsByEmailTest"/>
+            <class name="com.epam.lab.GetMailsBySubjectTest"/>
+        </classes>
+    </test>
+</suite>

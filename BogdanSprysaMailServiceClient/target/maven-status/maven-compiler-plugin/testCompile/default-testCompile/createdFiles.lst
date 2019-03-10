@@ -1,0 +1,5 @@
+com\epam\lab\DeleteMailTest.class
+com\epam\lab\SendMailTest.class
+com\epam\lab\GetMailsByEmailTest.class
+com\epam\lab\GetAllMailsTest.class
+com\epam\lab\GetMailsBySubjectTest.class
